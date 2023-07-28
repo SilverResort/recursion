@@ -1,0 +1,20 @@
+ALGORITHM Palindrome(word)
+VAR
+    word :ARRAY_OF CHAR[20];
+    palind:BOOLEAN=TRUE
+    i,j:INTEGER
+BEGIN
+// comparaison entre le debut et la fin du mot
+    FOR i FROM 0 TO length.word/2 STEP 1  DO
+        FOR j FROM length.word TO length.word/2 STEP 1  DO
+            IF (word[i]=word[j] or ) THEN //si les lettres sont similaires, on continue
+            ELSE_IF (length.word=1 or word="") // si le mot contient un mot ou est vide alors c'est un palindrome et on s'arrète
+                palind=TRUE
+                BREAK
+            ELSE // les lettres ne sont pas similaires on s'arrete et ce n'est pas un palindrome
+                palind=FALSE
+                BREAK 
+            END_IF
+        END_FOR
+    END_FOR
+END
